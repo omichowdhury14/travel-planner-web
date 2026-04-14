@@ -1,5 +1,5 @@
 {
-  "name": "travel-planner-bd",
+  "name": "travel-planner-web",
   "version": "1.0.0",
   "description": "Shortest path travel planner for 64 districts of Bangladesh",
   "main": "server.js",
