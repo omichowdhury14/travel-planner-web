@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planner | Ghumantu BD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-emerald-600 p-4 text-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold italic">Ghumantu BD</h1>
+            <div class="space-x-6">
+                <a href="index.html">Home</a>
+                <a href="planner.html" class="font-bold underline">Planner</a>
+            </div>
+        </div>
+    </nav>
 
+    <main class="container mx-auto my-10 px-4">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <h2 class="text-3xl font-bold mb-6">Plan Your Journey</h2>
+                <form id="plannerForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-600 mb-1">From</label>
+                        <select id="startNode" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-emerald-500"></select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600 mb-1">To</label>
+                        <select id="endNode" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-emerald-500"></select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600 mb-1">Transport</label>
+                        <select id="transport" class="w-full p-3 border rounded-lg">
+                            <option value="bus">Bus (Standard)</option>
+                            <option value="car">Private Car (Fast)</option>
+                            <option value="train">Train (Comfort)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold">Calculate Route</button>
+                </form>
+            </div>
+
+            <div id="resultCard" class="hidden bg-white p-8 rounded-xl shadow-md border-t-4 border-emerald-500">
+                <h2 class="text-2xl font-bold mb-4">Trip Summary</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between border-b pb-2">
+                        <span>Distance:</span> <span id="resDist" class="font-bold"></span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span>Time:</span> <span id="resTime" class="font-bold"></span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span>Cost:</span> <span id="resCost" class="font-bold text-emerald-600"></span>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-500 mb-2">Suggested Path:</p>
+                        <div id="resRoute" class="flex flex-wrap gap-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/planner.js"></script>
+</body>
+</html>
